@@ -1,0 +1,23 @@
+
+Function Max-Value(state)
+
+v = -∞
+if Terminal(state):
+
+  return Utility(state)
+for action in Actions(state):
+
+  v = Max(v, Min-Value(Result(state, action)))
+
+return v
+Function Min-Value(state):
+
+v = ∞
+if Terminal(state):
+
+  return Utility(state)
+for action in Actions(state):
+
+  v = Min(v, Max-Value(Result(state, action)))
+
+return v
